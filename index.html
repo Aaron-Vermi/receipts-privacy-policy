@@ -1,131 +1,59 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Receipts — Privacy Policy</title>
 <style>
-  :root { color-scheme: light dark; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 2.5rem 1.25rem 4rem;
-    line-height: 1.6;
-    color: #1a1a1a;
-    background: #fff;
-  }
-  @media (prefers-color-scheme: dark) {
-    body { color: #e6e6e6; background: #121212; }
-    a { color: #7db8ff; }
-    code { background: #1e1e1e; }
-  }
-  h1 { font-size: 1.6rem; margin-bottom: 0.25rem; }
-  h2 { font-size: 1.15rem; margin-top: 2.25rem; }
-  .updated { color: #666; font-size: 0.9rem; margin-bottom: 2rem; }
-  ul { padding-left: 1.25rem; }
-  li { margin: 0.35rem 0; }
-  code { background: #f2f2f2; padding: 0.1em 0.35em; border-radius: 3px; font-size: 0.9em; }
-  a { color: #0a5cd8; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; max-width: 720px; margin: 2rem auto; padding: 0 1.25rem; color: #1a1a1a; }
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.15rem; margin-top: 2rem; }
+  .effective-date { color: #555; font-size: 0.9rem; }
+  .placeholder { background: #fff3cd; padding: 0.1rem 0.3rem; }
 </style>
 </head>
 <body>
 
 <h1>Receipts — Privacy Policy</h1>
-<p class="updated">Last updated: August 18, 2026</p>
+<p class="effective-date">Effective date: 30.08.2026</p>
 
-<p>
-  Receipts is an accountability app: it measures <strong>how long</strong>
-  you spend in the apps you choose to track, and shares that with an
-  accountability partner you invite. It does not read <strong>what</strong>
-  you do in those apps. This policy explains exactly what is collected,
-  what is shared, and what is never touched.
-</p>
+<h2>What Receipts is</h2>
+<p>Receipts is screen time accountability shared with one invited partner. It measures how long you spend in the apps you choose to track — never what you do inside them.</p>
 
 <h2>Information we collect</h2>
-<p>To provide the app's core feature — tracked-app time limits and partner accountability — we collect:</p>
-<ul>
-  <li>A minimal account profile (email, and an optional profile photo you choose to add) and your partnership status</li>
-  <li>The apps and categories you choose to track, and your daily time limit for them</li>
-  <li>Your aggregate daily usage total for tracked apps, and a per-app breakdown</li>
-  <li>Coarse usage in fixed 3-hour windows (e.g. "6–9pm") — not a minute-by-minute activity log</li>
-  <li>Whether you're under, near, or over your limit</li>
-  <li>Extra-time requests you send, and their approval/denial/expiry status</li>
-  <li>Self-unlocks (granting yourself extra time) and when they happened</li>
-  <li>Your notification preferences</li>
-</ul>
-
-<h2>What your accountability partner can see</h2>
-<p>
-  Only what you leave switched on in <em>Settings → What your partner sees</em>,
-  and only ever as aggregate numbers — never raw activity:
-</p>
-<ul>
-  <li>Your selected apps and daily limit</li>
-  <li>Your daily total and per-app breakdown (if both are enabled)</li>
-  <li>Your coarse 3-hour usage windows and current limit status</li>
-  <li>Requests you send them, and your shared approval/denial/self-unlock history</li>
-</ul>
-<p>
-  You control each of these independently and can turn any of them off at
-  any time. Removing a partnership stops their access immediately.
-</p>
+<p><strong>Account information.</strong> Your email address and a display name you choose, via Supabase Authentication. If you set a profile picture, it's stored in a private storage bucket tied only to your account.</p>
+<p><strong>Usage data.</strong> The apps you've selected to track, your daily time limit, your daily and per-app usage totals, and coarse three-hour usage windows — not a minute-by-minute activity log.</p>
+<p><strong>Accountability activity.</strong> Requests for extra time you send your partner, their approvals or denials, self-unlock events, and preset nudge messages sent between you and your partner. Nudges are chosen from a fixed set of preset messages — Receipts does not support free-text messaging between partners.</p>
+<p><strong>Device and notification data.</strong> An app-generated installation identifier and an Expo push-notification token, used only to deliver notifications to your own device. This is not a hardware identifier.</p>
+<p><strong>Permission status.</strong> Whether Android permissions Receipts needs (such as Usage Access and, if enabled, Accessibility) are currently granted — not the underlying data those permissions could technically expose.</p>
 
 <h2>Information we never collect</h2>
-<ul>
-  <li>Messages, posts, comments, or anything you wrote</li>
-  <li>Screenshots or screen recordings</li>
-  <li>Search terms or browser history</li>
-  <li>Location</li>
-  <li>What's on your screen, or notification content</li>
-  <li>Keystrokes</li>
-  <li>An exact, minute-by-minute timeline of your activity</li>
-</ul>
-<p>
-  On Android, the component that detects when a tracked app is opened is
-  configured with <code>canRetrieveWindowContent="false"</code> — it is
-  structurally unable to read what's on screen. It checks one thing (which
-  app is in the foreground) against your tracked-app list, then discards
-  everything else. On iOS, Apple's Screen Time frameworks give Receipts
-  opaque selection tokens rather than app identities, and your Today/weekly
-  usage report is rendered entirely inside a private, sandboxed Apple
-  extension — Receipts cannot read, export, or upload the activity behind
-  it. That's why iOS report totals are local-only and never appear on your
-  partner's dashboard.
-</p>
+<p>Message content, posts, or anything you type; screenshots or screen recordings; search terms or browsing history; location; the content shown on your screen or in your notifications; keystrokes; or a precise, continuous timeline of your device activity.</p>
+<p>On Android, the component that detects when a tracked app is in the foreground reads only which app that is, and is configured (<code>canRetrieveWindowContent="false"</code>) so that it is technically unable to read screen content, view hierarchies, or typed text.</p>
 
-<h2>How your data is stored</h2>
-<p>
-  Data is stored with our backend provider (Supabase) using per-user access
-  controls, so only you — and, for the specific fields listed above, your
-  active accountability partner — can read your data. An optional profile
-  photo is stored in a private storage bucket and is never given a
-  permanent public URL.
-</p>
+<h2>How your information is shared</h2>
+<p><strong>With your accountability partner</strong> — only the categories you individually enable in Settings &rarr; <em>What your partner sees</em>, and only as aggregate numbers, never raw activity. Turning a category off, or removing the partnership entirely, stops that access immediately.</p>
+<p><strong>With service providers who process data on our behalf</strong> — Supabase (hosting, database, authentication, file storage) and Expo's push notification service, which relays notifications to Android's and iOS's own push systems. These providers act under their own security and confidentiality commitments and do not use your data for their own purposes.</p>
+<p><strong>We do not sell your data, and we do not share it with advertisers or data brokers.</strong> Receipts has no advertising or analytics SDKs.</p>
 
-<h2>Data retention and deletion</h2>
-<p>
-  Your data is retained for as long as your account is active. You can
-  request deletion of your account and associated data at any time by
-  contacting us at the email below.
-</p>
+<h2>Data retention</h2>
+<p>We retain your account and accountability data for as long as your account is active, or as needed to provide the service.</p>
+
+<h2>Your choices and rights</h2>
+<p>You control which data categories, if any, your partner can see, and can change or revoke them at any time in Settings. You can remove a partnership to stop all partner access immediately.</p>
+<p>You can delete your account and all associated data at any time from <strong>Settings &rarr; Delete account</strong>, in-app, with no manual request needed. For access or correction requests, or any other question about your data, contact us at contact@webupsolutions.de.</p>
 
 <h2>Children's privacy</h2>
-<p>
-  Receipts is not directed at children under 13, and we do not knowingly
-  collect data from children under 13.
-</p>
+<p>Receipts is not directed at children and is not knowingly used to collect information from anyone under 13. If you believe a child has provided us information, contact us at the address above and we will delete it.</p>
+
+<h2>Security</h2>
+<p>Data in transit is encrypted (TLS). Data at rest is stored in Supabase's managed Postgres infrastructure with row-level security policies that restrict every table to its owner and, where explicitly enabled, an active accountability partner.</p>
 
 <h2>Changes to this policy</h2>
-<p>
-  If this policy changes, the "Last updated" date above will change with
-  it. Material changes will be reflected here before they take effect.
-</p>
+<p>We'll update the effective date above when this policy changes, and for material changes, notify you in-app.</p>
 
 <h2>Contact</h2>
-<p>
-  Questions about this policy or your data: <a href="mailto:contact@webupsolutions.de">contact@webupsolutions.de</a>
-</p>
+<p><strong>WebUp - Vermeulen und Kupferschmid GbR</strong> — contact@webupsolutions.de</p>
 
 </body>
 </html>
